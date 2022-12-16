@@ -8,6 +8,12 @@ class Question(models.Model):
     content = models.TextField()
     index = models.IntegerField(validators=[MinValueValidator(1)])
 
+    def get_right_answers(self):
+        return set(self.options.filter(iscorrect=True).values_list('id', flat=True))
+    
+    def check_answers(self, answers):
+        return self.get_right_answers() == set(answers)
+
 
 class Option(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='options')
@@ -21,3 +27,7 @@ class QuizResult(models.Model):
     right_answers = models.IntegerField()
     wrong_answers = models.IntegerField()
     created = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def empty_answers(self):
+        return self.total_question - (self.right_answers + self.wrong_answers)
