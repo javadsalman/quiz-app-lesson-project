@@ -6,12 +6,14 @@ from .serializers import (
 )
 from rest_framework.decorators import api_view
 from .models import Question, Option, QuizResult
+from time import sleep
 
 
 # Create your views here.
 class QuestionListAV(generics.ListCreateAPIView):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
+
 
 class QuestionDetailAV(generics.RetrieveUpdateDestroyAPIView):
     queryset = Question.objects.all()
@@ -29,4 +31,5 @@ class QuizResultListAV(generics.ListCreateAPIView):
 class QuizResultDetailAV(generics.RetrieveUpdateDestroyAPIView):
     queryset = QuizResult.objects.all()
     serializer_class = QuizResultSerializer
+
     

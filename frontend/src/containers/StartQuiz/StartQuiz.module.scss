@@ -1,0 +1,31 @@
+.StartQuiz {
+    height: 100%;
+    overflow: auto;
+}
+
+.Form {
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.302);
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    $radius_amount: 7px;
+    border-radius: $radius_amount;
+    .Input {
+        flex-grow: 1;
+        border-top-left-radius: $radius_amount;
+        border-bottom-left-radius: $radius_amount;
+        outline: none;
+        padding: 10px;
+        font-size: 20px;
+        border: 1px solid black;
+    }
+    .Button {
+        padding: 15px;
+        background-color: rgb(27, 21, 51);
+        border-top-right-radius: $radius_amount;
+        border-bottom-right-radius: $radius_amount;
+        cursor: pointer;
+        color: white;
+    }
+}

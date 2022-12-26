@@ -1,0 +1,25 @@
+.Table {
+    border-collapse: collapse;
+    width: 100%;
+    td, th {
+        border: 2px solid rgb(194, 194, 194);
+        padding: 0.5rem;
+        text-align: center;
+        font-size: 20px;
+    }
+    tbody tr:nth-child(odd) {
+        background: rgba(238, 238, 238, 0.068);
+    }
+    caption {
+        font-size: 0.8rem;
+    }
+}
+
+.DeleteButton {
+    cursor: pointer;
+    width: 40px;
+    transition-duration: 300ms;
+    &:hover {
+        opacity: 0.7;
+    }
+}

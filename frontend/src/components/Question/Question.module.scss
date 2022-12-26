@@ -1,0 +1,62 @@
+.Question {
+    background-color: rgb(241, 241, 241);
+    width: 600px;
+    color: black;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 25px;
+
+    .Index {
+        position: absolute;
+        left: 5px;
+        top: 10px;
+        $size: 40px;
+        width: $size;
+        height: $size;
+        background-color: rgba(180, 180, 180, 0.274);
+        border-radius: 50%;
+        .IndexValue {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+        }
+    }
+    .Content {
+        padding-left: 40px;
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    .Options {
+        .Option {
+            width: 100%;
+            background-color: rgba(128, 128, 128, 0.125);
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition-duration: 300ms;
+            &:hover {
+                background-color: darken(rgba(128, 128, 128, 0.125), 40%);
+            }
+        }
+
+        .OptionCorrect {
+            background-color: greenyellow;
+            &:hover {
+                background-color: darken(greenyellow, 20%);
+            }
+        }
+        .OptionWrong {
+            background-color: lightcoral;
+            &:hover {
+                background-color: darken(lightcoral, 20%);
+            }
+        }
+    }
+}

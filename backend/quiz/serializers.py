@@ -53,6 +53,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 
 class QuizResultSerializer(serializers.ModelSerializer):
     answers = serializers.JSONField(write_only=True)
+    created = serializers.DateTimeField(format='%B %d, %Y %H:%M:%S', read_only=True)
     class Meta:
         model = QuizResult
         fields = '__all__'
@@ -87,7 +88,7 @@ class QuizResultSerializer(serializers.ModelSerializer):
         quizresult.save()
         return quizresult
         
-        
+
         
         
         

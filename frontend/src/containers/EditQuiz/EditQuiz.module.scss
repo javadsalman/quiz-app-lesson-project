@@ -1,0 +1,25 @@
+.AddQuestion {
+    $size: 70px;
+    $bgcolor: rgb(41, 41, 176);
+    width: $size;
+    height: $size;
+    background-color: $bgcolor;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    border-radius: 50%;
+    margin: auto;
+    cursor: pointer;
+    transition-duration: 300ms;
+    &:hover {
+        background-color: lighten($bgcolor, 10%);
+    }
+
+    .Pilus {
+        position: absolute;
+        font-size: 60px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
