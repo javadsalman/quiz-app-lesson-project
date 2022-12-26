@@ -24,3 +24,4 @@ yarn-error.log*
 projectenv
 __pycache__
 backend/db.sqlite3
+.env
